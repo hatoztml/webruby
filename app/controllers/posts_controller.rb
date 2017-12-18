@@ -14,6 +14,10 @@ class PostsController < ApplicationController
     @post=Post.new
   end
 
+  def kontrol
+    redirect_to root_path,notice"Yetkiniz Bulunmamaktadir",unless current_user==@post.AdminUser
+
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -29,10 +33,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
-  def kontrol
-    redirect_to root_path,notice"Yetkiniz Bulunmamaktadir",unless current_user==@post.User
 
-    end
 
   # POST /posts
   # POST /posts.json
