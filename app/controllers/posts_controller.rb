@@ -30,8 +30,8 @@ class PostsController < ApplicationController
   def edit
   end
   def kontrol
-    redirect_to root_path,notice"Yetkiniz Bulunmamaktadir",unless current_user==@post.user
-      
+    redirect_to root_path,notice"Yetkiniz Bulunmamaktadir",unless current_user==@post.AdminUser
+
     end
 
   # POST /posts
